@@ -1,0 +1,130 @@
+{
+  "id": "chemistry-03",
+  "version": "1.0.0",
+  "title": "Activation energy and catalysis",
+  "subtitle": "Overcoming the energetic barrier to chemical change",
+  "conceptIds": ["chemistry.rate-laws"],
+  "learn": [
+    {
+      "id": "c3-kinetics",
+      "kind": "kinetics",
+      "prompt": "An catalyzed first-order reaction has k = 0.80 s⁻¹. Adjust the reactant concentration [A] to reach a target rate of 1.60 M/s.",
+      "conceptIds": ["chemistry.rate-laws"],
+      "hint": "Rate = k[A] => 1.60 = 0.80 x [A] => [A] = 1.60 / 0.80 = 2.00 M.",
+      "explanation": "At [A] = 2.00 M with rate constant k = 0.80 s⁻¹, the reaction proceeds at 1.60 M/s.",
+      "reactant": "Substrate",
+      "order": 1,
+      "k": 0.8,
+      "minConcM": 0.2,
+      "maxConcM": 3.0,
+      "stepConcM": 0.1,
+      "targetRateMPerS": 1.6,
+      "answer": 2.0,
+      "tolerance": 0.08
+    },
+    {
+      "id": "c3-choice-maxwell",
+      "kind": "choice",
+      "prompt": "According to collision theory, why does raising the temperature increase reaction rate much more than just increasing collision frequency?",
+      "conceptIds": ["chemistry.rate-laws"],
+      "hint": "Consider the Maxwell-Boltzmann distribution and the fraction of molecules with energy E >= Ea.",
+      "explanation": "Raising temperature shifts the kinetic energy distribution. The fraction of molecules with energy exceeding the activation energy Ea grows exponentially (e^(-Ea/RT)).",
+      "options": [
+        { "id": "a", "label": "A far larger fraction of molecules possess kinetic energy greater than the activation energy" },
+        { "id": "b", "label": "Molecules become smaller and easier to strike" },
+        { "id": "c", "label": "The activation energy barrier drops as temperature rises" },
+        { "id": "d", "label": "Higher temperatures change the reaction stoichiometry" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "Molecular radii do not shrink with temperature.",
+        "c": "Activation energy Ea is a constant property of the uncatalyzed path; temperature changes molecular kinetic energy, not Ea.",
+        "d": "The balanced chemical equation remains identical."
+      }
+    },
+    {
+      "id": "c3-slider",
+      "kind": "slider",
+      "prompt": "An enzyme provides an alternative reaction pathway that lowers the activation energy barrier from 75 kJ/mol to 45 kJ/mol. How many kJ/mol was the energy barrier reduced?",
+      "conceptIds": ["chemistry.rate-laws"],
+      "hint": "Subtract the catalyzed activation energy from the uncatalyzed value: 75 - 45.",
+      "explanation": "The catalyst lowers the barrier by 75 - 45 = 30 kJ/mol, dramatically multiplying the reaction rate.",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "kJ/mol",
+      "answer": 30,
+      "tolerance": 0.01
+    },
+    {
+      "id": "c3-math",
+      "kind": "math",
+      "prompt": "A standard rule of thumb states that reaction rate approximately doubles for every 10 °C temperature increase. If a reaction rate is 1.5 M/s at 20 °C, what is its rate in M/s at 40 °C?",
+      "conceptIds": ["chemistry.rate-laws"],
+      "hint": "From 20 °C to 40 °C is two 10 °C increments: 1.5 x 2 x 2.",
+      "explanation": "The temperature rises by 20 °C (two doublings). Rate = 1.5 M/s x 2^2 = 1.5 x 4 = 6.0 M/s.",
+      "answer": "6",
+      "variables": [],
+      "tolerance": 0.001
+    }
+  ],
+  "check": [
+    {
+      "id": "c3-check-1",
+      "kind": "choice",
+      "prompt": "How does a catalyst accelerate a chemical reaction without being consumed?",
+      "conceptIds": ["chemistry.rate-laws"],
+      "hint": "Think about the transition state and the reaction coordinate diagram.",
+      "explanation": "A catalyst provides an alternative transition state with a lower activation energy, speeding up both forward and reverse rates without shifting equilibrium.",
+      "options": [
+        { "id": "a", "label": "It provides an alternative reaction pathway with a lower activation energy" },
+        { "id": "b", "label": "It increases the heat of reaction (ΔH)" },
+        { "id": "c", "label": "It prevents molecules from colliding" },
+        { "id": "d", "label": "It shifts the chemical equilibrium toward products" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "ΔH is a state function between reactants and products; catalysts do not alter ΔH.",
+        "c": "Collisions are required for reaction; catalysts do not stop collisions.",
+        "d": "Catalysts speed up the approach to equilibrium, but do not change the equilibrium constant Keq."
+      }
+    },
+    {
+      "id": "c3-check-2",
+      "kind": "choice",
+      "prompt": "In an exothermic reaction, what happens to the overall enthalpy change ΔH when a catalyst is introduced?",
+      "conceptIds": ["chemistry.rate-laws"],
+      "hint": "Enthalpy of reactants and products are fixed.",
+      "explanation": "Enthalpy change ΔH depends only on initial reactant and final product states. Catalysts only lower the activation barrier Ea along the path.",
+      "options": [
+        { "id": "a", "label": "ΔH remains completely unchanged" },
+        { "id": "b", "label": "ΔH becomes zero" },
+        { "id": "c", "label": "ΔH becomes twice as negative" },
+        { "id": "d", "label": "ΔH converts from exothermic to endothermic" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "ΔH is not zero; bonds are still broken and formed with net heat release.",
+        "c": "Thermodynamics does not change; only kinetics changes.",
+        "d": "Catalysts cannot reverse the thermodynamic spontaneity of a reaction."
+      }
+    }
+  ],
+  "takeaway": {
+    "title": "Kinetics vs. thermodynamics",
+    "body": "Thermodynamics tells you whether a reaction can happen; kinetics tells you how fast. Catalysts accelerate reactions by lowering the activation energy barrier Ea without altering the overall energy difference ΔH or the final equilibrium."
+  },
+  "practice": {
+    "generatorId": "chemistry.rate-law",
+    "count": 12,
+    "config": {}
+  },
+  "metadata": {
+    "domain": "chemistry",
+    "courseId": "chemistry",
+    "levelId": "chemistry-level-1",
+    "order": 2,
+    "provenance": "authored",
+    "confidence": "high"
+  }
+}

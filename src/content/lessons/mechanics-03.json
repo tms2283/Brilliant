@@ -1,0 +1,119 @@
+{
+  "id": "mechanics-03",
+  "version": "1.0.0",
+  "title": "Pulleys and conservation of work",
+  "subtitle": "Trading distance pulled for lifting force",
+  "conceptIds": ["mechanics.mechanical-advantage", "mechanics.torque"],
+  "learn": [
+    {
+      "id": "m3-lever",
+      "kind": "lever",
+      "prompt": "A heavy 30 N crate sits 1 m from the fulcrum. Move the 10 N effort until the system balances.",
+      "conceptIds": ["mechanics.torque", "mechanics.mechanical-advantage"],
+      "hint": "Match the torques: 30 N x 1 m = 30 N m. Set effort distance = 30 N m / 10 N.",
+      "explanation": "30 N x 1 m = 30 N m. For 10 N of effort, distance = 30 N m / 10 N = 3 m. The mechanical advantage is 3.",
+      "left": { "forceN": 30, "distanceM": 1, "label": "Load (30 N)" },
+      "right": { "forceN": 10, "minM": 0.5, "maxM": 5, "stepM": 0.1, "label": "Effort (10 N)" },
+      "answer": 3,
+      "tolerance": 0.05
+    },
+    {
+      "id": "m3-choice-pulley",
+      "kind": "choice",
+      "prompt": "A block-and-tackle system has 4 supporting ropes holding up a 400 N load. What effort force is needed to support the load?",
+      "conceptIds": ["mechanics.mechanical-advantage"],
+      "hint": "The weight is distributed evenly across all supporting rope segments.",
+      "explanation": "With 4 supporting strands, each strand holds 400 N / 4 = 100 N of tension. The effort force required is 100 N.",
+      "options": [
+        { "id": "a", "label": "100 N" },
+        { "id": "b", "label": "400 N" },
+        { "id": "c", "label": "1600 N" },
+        { "id": "d", "label": "200 N" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "That would be a single fixed pulley with no mechanical advantage.",
+        "c": "Multiplying load by 4 calculates the wrong direction; pulleys reduce required effort.",
+        "d": "A 2-rope system needs 200 N, but this system has 4 strands."
+      }
+    },
+    {
+      "id": "m3-slider",
+      "kind": "slider",
+      "prompt": "You use a pulley system with an ideal mechanical advantage of 4 to lift a crate 0.5 m. How many meters of rope must you pull?",
+      "conceptIds": ["mechanics.mechanical-advantage"],
+      "hint": "Ideal machines conserve work: distance pulled = IMA x distance lifted.",
+      "explanation": "Conservation of work means distance in = IMA x distance out = 4 x 0.5 m = 2.0 m.",
+      "min": 0,
+      "max": 5,
+      "step": 0.25,
+      "unit": "m",
+      "answer": 2,
+      "tolerance": 0.05
+    },
+    {
+      "id": "m3-math",
+      "kind": "math",
+      "prompt": "A hydraulic lift has a mechanical advantage of 15. What effort force in newtons is needed to lift a 3000 N car?",
+      "conceptIds": ["mechanics.mechanical-advantage"],
+      "hint": "Effort = Load / IMA.",
+      "explanation": "Effort = 3000 N / 15 = 200 N.",
+      "answer": "200",
+      "variables": [],
+      "tolerance": 0.001
+    }
+  ],
+  "check": [
+    {
+      "id": "m3-check-1",
+      "kind": "choice",
+      "prompt": "Does an ideal simple machine ever reduce the total work required to lift an object?",
+      "conceptIds": ["mechanics.mechanical-advantage"],
+      "hint": "Consider energy conservation: Work = Force x Distance.",
+      "explanation": "No simple machine reduces work. Machines trade smaller input force for a proportionally greater input distance: Work in = Work out.",
+      "options": [
+        { "id": "a", "label": "No — machines trade smaller force for greater distance, keeping work constant" },
+        { "id": "b", "label": "Yes — machines create energy to make the load lighter" },
+        { "id": "c", "label": "Yes — work is reduced by the mechanical advantage factor" },
+        { "id": "d", "label": "No — machines always require twice as much work" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "Energy cannot be created; machines obey the law of conservation of energy.",
+        "c": "Mechanical advantage reduces force, not energy or work.",
+        "d": "Ideal machines lose no energy to friction."
+      }
+    },
+    {
+      "id": "m3-check-2",
+      "kind": "slider",
+      "prompt": "A pulley system has an IMA of 3. To lift a 90 N box, set the required effort force in newtons.",
+      "conceptIds": ["mechanics.mechanical-advantage"],
+      "hint": "Effort = Load / IMA = 90 N / 3.",
+      "explanation": "Effort force = 90 N / 3 = 30 N.",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "N",
+      "answer": 30,
+      "tolerance": 0.01
+    }
+  ],
+  "takeaway": {
+    "title": "Machines trade force for distance",
+    "body": "Pulleys and levers amplify your force by distributing tension or extending lever arms. Work is conserved: reducing the force required requires pulling or moving proportionally farther."
+  },
+  "practice": {
+    "generatorId": "mechanics.mechanical-advantage",
+    "count": 12,
+    "config": {}
+  },
+  "metadata": {
+    "domain": "mechanics",
+    "courseId": "mechanics",
+    "levelId": "mechanics-level-1",
+    "order": 2,
+    "provenance": "authored",
+    "confidence": "high"
+  }
+}

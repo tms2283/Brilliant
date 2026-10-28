@@ -1,0 +1,121 @@
+{
+  "id": "circuits-04",
+  "version": "1.0.0",
+  "title": "Parallel circuits and branch currents",
+  "subtitle": "Dividing current across independent paths",
+  "conceptIds": ["circuits.parallel", "circuits.ohms-law"],
+  "learn": [
+    {
+      "id": "c4-toggle",
+      "kind": "toggle",
+      "prompt": "Two lamps are connected in parallel across a battery, each with its own switch. Which switches must be closed to illuminate ONLY Lamp 2?",
+      "conceptIds": ["circuits.parallel"],
+      "hint": "Parallel branches are independent. Current flows through any branch whose switch is closed.",
+      "explanation": "In parallel, each branch connects directly across the battery terminals. Closing Switch 2 powers Lamp 2 independently of Lamp 1.",
+      "components": [
+        { "id": "s1", "label": "Switch 1 (Branch 1)", "onByDefault": false },
+        { "id": "s2", "label": "Switch 2 (Branch 2)", "onByDefault": false },
+        { "id": "sm", "label": "Main battery disconnect", "onByDefault": true }
+      ],
+      "answer": ["s2", "sm"]
+    },
+    {
+      "id": "c4-choice",
+      "kind": "choice",
+      "prompt": "You add a third identical resistor in parallel to an existing circuit. What happens to the total current drawn from the battery?",
+      "conceptIds": ["circuits.parallel", "circuits.ohms-law"],
+      "hint": "Adding another branch provides an additional path for charges to flow.",
+      "explanation": "Each parallel branch draws its own current V / R. Adding another branch provides a new path, increasing total current drawn from the battery.",
+      "options": [
+        { "id": "a", "label": "Total current increases" },
+        { "id": "b", "label": "Total current decreases" },
+        { "id": "c", "label": "Total current stays the same" },
+        { "id": "d", "label": "Total current drops to zero" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "In series, adding resistance decreases current. In parallel, adding a resistor adds another path, increasing total current.",
+        "c": "The new branch draws current from the source, so the battery must supply more total charge per second.",
+        "d": "A parallel branch does not short-circuit or stop existing branches."
+      }
+    },
+    {
+      "id": "c4-slider",
+      "kind": "slider",
+      "prompt": "A 12 V battery powers two parallel branches: Branch 1 has 6 Ω and Branch 2 has 12 Ω. Set the total current leaving the battery.",
+      "conceptIds": ["circuits.parallel", "circuits.ohms-law"],
+      "hint": "Find the current in each branch (I1 = V/R1, I2 = V/R2), then add them together.",
+      "explanation": "I1 = 12 V / 6 Ω = 2 A. I2 = 12 V / 12 Ω = 1 A. Total current I = 2 A + 1 A = 3 A.",
+      "min": 0,
+      "max": 8,
+      "step": 0.5,
+      "unit": "A",
+      "answer": 3,
+      "tolerance": 0.01
+    },
+    {
+      "id": "c4-math",
+      "kind": "math",
+      "prompt": "Two 10 Ω resistors are wired in parallel. Enter their equivalent resistance in ohms.",
+      "conceptIds": ["circuits.parallel"],
+      "hint": "For two identical resistors in parallel, Req = R / 2.",
+      "explanation": "1/Req = 1/10 + 1/10 = 2/10 = 1/5, so Req = 5 Ω.",
+      "answer": "5",
+      "variables": [],
+      "tolerance": 0.001
+    }
+  ],
+  "check": [
+    {
+      "id": "c4-check-1",
+      "kind": "choice",
+      "prompt": "Why are household wall outlets wired in parallel rather than in series?",
+      "conceptIds": ["circuits.parallel"],
+      "hint": "Consider what happens when you unplug one appliance.",
+      "explanation": "In parallel, each appliance receives the full 120 V/230 V line voltage and operates independently of other devices.",
+      "options": [
+        { "id": "a", "label": "Each outlet sees the full line voltage and appliances run independently" },
+        { "id": "b", "label": "Parallel wiring uses less copper wire than series" },
+        { "id": "c", "label": "Appliances in parallel share current equally regardless of resistance" },
+        { "id": "d", "label": "Parallel circuits prevent current from flowing" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "Parallel wiring actually requires separate runs to maintain independence.",
+        "c": "Appliances draw current based on their own resistance: I = V / R.",
+        "d": "Parallel circuits allow full operational current."
+      }
+    },
+    {
+      "id": "c4-check-2",
+      "kind": "slider",
+      "prompt": "A 24 V source connects to an 8 Ω branch and a 24 Ω branch in parallel. Set the current flowing through ONLY the 8 Ω branch.",
+      "conceptIds": ["circuits.parallel", "circuits.ohms-law"],
+      "hint": "Each parallel branch sees the full source voltage: I_branch = V / R_branch.",
+      "explanation": "I = 24 V / 8 Ω = 3 A.",
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "unit": "A",
+      "answer": 3,
+      "tolerance": 0.01
+    }
+  ],
+  "takeaway": {
+    "title": "Parallel branches are independent paths",
+    "body": "Every branch in parallel sees the full voltage. Branch currents add to the total, and equivalent resistance is always smaller than the smallest branch."
+  },
+  "practice": {
+    "generatorId": "circuits.series-parallel",
+    "count": 12,
+    "config": {}
+  },
+  "metadata": {
+    "domain": "circuits",
+    "courseId": "circuits",
+    "levelId": "circuits-level-2",
+    "order": 3,
+    "provenance": "authored",
+    "confidence": "high"
+  }
+}

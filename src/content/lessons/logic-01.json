@@ -1,0 +1,132 @@
+{
+  "id": "logic-01",
+  "version": "1.0.0",
+  "title": "Boolean logic: AND, OR, NOT",
+  "subtitle": "The binary building blocks of digital thought",
+  "conceptIds": ["logic.boolean-operators"],
+  "learn": [
+    {
+      "id": "l1-toggle-and",
+      "kind": "toggle",
+      "prompt": "An AND gate requires all of its inputs to be high (1) to produce a high output. Configure inputs A and B so the AND gate turns ON.",
+      "conceptIds": ["logic.boolean-operators"],
+      "hint": "An AND gate outputs 1 only when Input A = 1 AND Input B = 1.",
+      "explanation": "True AND True = True. If either input is False, the AND gate outputs False.",
+      "components": [
+        { "id": "inA", "label": "Input A", "onByDefault": false },
+        { "id": "inB", "label": "Input B", "onByDefault": false }
+      ],
+      "answer": ["inA", "inB"]
+    },
+    {
+      "id": "l1-choice-or",
+      "kind": "choice",
+      "prompt": "Input A is FALSE (0) and Input B is TRUE (1). What is the output of an OR gate?",
+      "conceptIds": ["logic.boolean-operators"],
+      "hint": "An OR gate outputs TRUE if AT LEAST ONE input is TRUE.",
+      "explanation": "0 OR 1 = 1. An OR gate only outputs FALSE when both inputs are FALSE.",
+      "options": [
+        { "id": "true", "label": "TRUE (1)" },
+        { "id": "false", "label": "FALSE (0)" },
+        { "id": "unknown", "label": "UNKNOWN" },
+        { "id": "high-z", "label": "HIGH IMPEDANCE" }
+      ],
+      "answer": "true",
+      "misconceptionMap": {
+        "false": "An OR gate is satisfied whenever any input is 1.",
+        "unknown": "Digital logic is deterministic and fully resolved.",
+        "high-z": "The output of an active gate drives a solid voltage level."
+      }
+    },
+    {
+      "id": "l1-choice-not",
+      "kind": "choice",
+      "prompt": "A NOT gate (inverter) receives an input of TRUE (1). What does it output?",
+      "conceptIds": ["logic.boolean-operators"],
+      "hint": "A NOT gate inverts its input: 1 becomes 0, and 0 becomes 1.",
+      "explanation": "NOT(1) = 0. The output is FALSE.",
+      "options": [
+        { "id": "false", "label": "FALSE (0)" },
+        { "id": "true", "label": "TRUE (1)" },
+        { "id": "null", "label": "NULL" },
+        { "id": "two", "label": "2" }
+      ],
+      "answer": "false",
+      "misconceptionMap": {
+        "true": "A NOT gate inverts the signal; it never passes it unchanged.",
+        "null": "Boolean logic operates over {0, 1}.",
+        "two": "Binary logic values are strictly 0 and 1."
+      }
+    },
+    {
+      "id": "l1-math",
+      "kind": "math",
+      "prompt": "In binary Boolean notation, evaluate: 1 * (0 + 1). (Where * denotes AND, + denotes OR).",
+      "conceptIds": ["logic.boolean-operators"],
+      "hint": "0 OR 1 = 1. Then 1 AND 1 = 1.",
+      "explanation": "Inside the parentheses, 0 + 1 = 1. Then 1 * 1 = 1.",
+      "answer": "1",
+      "variables": [],
+      "tolerance": 0.001
+    }
+  ],
+  "check": [
+    {
+      "id": "l1-check-1",
+      "kind": "choice",
+      "prompt": "Which logic gate outputs TRUE only when BOTH of its inputs are TRUE?",
+      "conceptIds": ["logic.boolean-operators"],
+      "hint": "Think of two switches in series.",
+      "explanation": "An AND gate is the conjunction operator: A AND B is true only when both operands are true.",
+      "options": [
+        { "id": "and", "label": "AND gate" },
+        { "id": "or", "label": "OR gate" },
+        { "id": "not", "label": "NOT gate" },
+        { "id": "buffer", "label": "Buffer" }
+      ],
+      "answer": "and",
+      "misconceptionMap": {
+        "or": "An OR gate also outputs TRUE if only one input is TRUE.",
+        "not": "A NOT gate has only one input.",
+        "buffer": "A buffer simply copies a single input."
+      }
+    },
+    {
+      "id": "l1-check-2",
+      "kind": "choice",
+      "prompt": "If A = 1 and B = 0, what is NOT(A AND B)?",
+      "conceptIds": ["logic.boolean-operators"],
+      "hint": "First evaluate A AND B, then invert the result.",
+      "explanation": "A AND B = 1 AND 0 = 0. Inverting with NOT gives NOT(0) = 1 (TRUE). This is a NAND operation.",
+      "options": [
+        { "id": "true", "label": "TRUE (1)" },
+        { "id": "false", "label": "FALSE (0)" },
+        { "id": "undefined", "label": "UNDEFINED" },
+        { "id": "minus-one", "label": "-1" }
+      ],
+      "answer": "true",
+      "misconceptionMap": {
+        "false": "Remember to invert the result of the AND with the outer NOT.",
+        "undefined": "Boolean expressions are fully deterministic.",
+        "minus-one": "Boolean inversion produces 1, not arithmetic negation."
+      }
+    }
+  ],
+  "takeaway": {
+    "title": "The triumvirate of Boolean logic",
+    "body": "Every computer on Earth is built from three elementary logical operations: AND (both must hold), OR (at least one must hold), and NOT (inversion). Combined, they can express any computable algorithm."
+  },
+  "practice": {
+    "generatorId": "logic.gates",
+    "count": 12,
+    "config": {}
+  },
+  "metadata": {
+    "domain": "logic",
+    "courseId": "logic",
+    "levelId": "logic-level-1",
+    "order": 0,
+    "provenance": "authored",
+    "confidence": "high"
+  }
+}

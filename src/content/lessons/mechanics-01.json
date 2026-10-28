@@ -1,0 +1,92 @@
+{
+  "id": "mechanics-01",
+  "version": "1.0.0",
+  "title": "Torque and balance",
+  "subtitle": "Trade force for distance",
+  "conceptIds": ["mechanics.torque"],
+  "learn": [
+    {
+      "id": "m1-lever",
+      "kind": "lever",
+      "prompt": "A 20 N load sits 2 m left of the pivot. Move the 10 N effort until the beam balances.",
+      "conceptIds": ["mechanics.torque"],
+      "hint": "The load makes 20 N x 2 m = 40 N m of torque. Find the effort distance that makes the same torque.",
+      "explanation": "The load torque is 20 N x 2 m = 40 N m. A 10 N effort needs 40 N m / 10 N = 4 m to match it.",
+      "left": { "forceN": 20, "distanceM": 2, "label": "Load" },
+      "right": { "forceN": 10, "minM": 0.5, "maxM": 5, "stepM": 0.1, "label": "Effort" },
+      "answer": 4,
+      "tolerance": 0.05
+    },
+    {
+      "id": "m1-choice",
+      "kind": "choice",
+      "prompt": "A fixed effort is moved twice as far from the pivot. What happens to its torque?",
+      "conceptIds": ["mechanics.torque"],
+      "hint": "Torque grows in direct proportion to the distance from the pivot.",
+      "explanation": "Torque = force x distance. Doubling the distance doubles the torque when the force is unchanged.",
+      "options": [
+        { "id": "a", "label": "It doubles" },
+        { "id": "b", "label": "It halves" },
+        { "id": "c", "label": "It stays the same" },
+        { "id": "d", "label": "It quadruples" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "Moving farther from the pivot makes the effort more effective, not less.",
+        "c": "The force is unchanged, but torque also depends on distance from the pivot.",
+        "d": "Quadrupling would require doubling both force and distance."
+      }
+    }
+  ],
+  "check": [
+    {
+      "id": "m1-check-1",
+      "kind": "lever",
+      "prompt": "A 30 N load sits 1.5 m left of the pivot. Place the 15 N effort so the beam balances.",
+      "conceptIds": ["mechanics.torque"],
+      "hint": "Compute the load torque first, then divide by the effort force.",
+      "explanation": "Load torque = 30 N x 1.5 m = 45 N m. The 15 N effort must sit 45 N m / 15 N = 3 m from the pivot.",
+      "left": { "forceN": 30, "distanceM": 1.5, "label": "Load" },
+      "right": { "forceN": 15, "minM": 0.5, "maxM": 5, "stepM": 0.1, "label": "Effort" },
+      "answer": 3,
+      "tolerance": 0.05
+    },
+    {
+      "id": "m1-check-2",
+      "kind": "choice",
+      "prompt": "A 12 N load sits 2 m left of a pivot. How far right of the pivot must an 8 N effort be placed to balance it?",
+      "conceptIds": ["mechanics.torque"],
+      "hint": "Set load torque equal to effort torque: 12 N x 2 m = 8 N x d.",
+      "explanation": "12 N x 2 m = 24 N m, and 24 N m / 8 N = 3 m.",
+      "options": [
+        { "id": "a", "label": "1.5 m" },
+        { "id": "b", "label": "2 m" },
+        { "id": "c", "label": "3 m" },
+        { "id": "d", "label": "4 m" }
+      ],
+      "answer": "c",
+      "misconceptionMap": {
+        "a": "That divides the load force by the effort force but ignores the load distance.",
+        "b": "That copies the load distance. The effort is smaller, so it must sit farther out.",
+        "d": "That gives 32 N m of effort torque, which is more than the load torque."
+      }
+    }
+  ],
+  "takeaway": {
+    "title": "A small force far out can match a large force close in",
+    "body": "Torque is force times distance from the pivot. A lever balances when the two torques are equal, so moving an effort farther out multiplies its turning effect."
+  },
+  "practice": {
+    "generatorId": "mechanics.torque",
+    "count": 10,
+    "config": {}
+  },
+  "metadata": {
+    "domain": "mechanics",
+    "courseId": "mechanics",
+    "levelId": "mechanics-level-1",
+    "order": 0,
+    "provenance": "authored",
+    "confidence": "high"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "id": "chemistry-01",
+  "version": "1.0.0",
+  "title": "Reaction rates and rate laws",
+  "subtitle": "How molecular concentration governs the pace of chemical change",
+  "conceptIds": ["chemistry.rate-laws"],
+  "learn": [
+    {
+      "id": "c1-kinetics-1",
+      "kind": "kinetics",
+      "prompt": "For a first-order reaction with rate law Rate = 0.50 [A], adjust the reactant concentration [A] to achieve a target rate of 1.00 M/s.",
+      "conceptIds": ["chemistry.rate-laws"],
+      "hint": "Set Rate = k[A]: 1.00 M/s = 0.50 [A]. Dividing gives [A] = 1.00 / 0.50 = 2.00 M.",
+      "explanation": "Because the reaction is first-order, doubling the concentration from 1.00 M to 2.00 M doubles the collision frequency and doubles the reaction rate to 1.00 M/s.",
+      "reactant": "A",
+      "order": 1,
+      "k": 0.5,
+      "minConcM": 0.2,
+      "maxConcM": 3.0,
+      "stepConcM": 0.1,
+      "targetRateMPerS": 1.0,
+      "answer": 2.0,
+      "tolerance": 0.08
+    },
+    {
+      "id": "c1-choice-1",
+      "kind": "choice",
+      "prompt": "A reaction follows the first-order rate law Rate = k[A]. What happens to the reaction rate if the concentration of A is tripled?",
+      "conceptIds": ["chemistry.rate-laws"],
+      "hint": "In a first-order reaction, rate is directly proportional to concentration: Rate ∝ [A]^1.",
+      "explanation": "Because the exponent on [A] is 1, tripling the concentration multiplies the rate by 3^1 = 3.",
+      "options": [
+        { "id": "a", "label": "The rate triples (3x)" },
+        { "id": "b", "label": "The rate increases ninefold (9x)" },
+        { "id": "c", "label": "The rate is unchanged" },
+        { "id": "d", "label": "The rate decreases to 1/3" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "A ninefold (3^2) increase occurs for a second-order reaction, not first-order.",
+        "c": "Rate is unchanged only for zero-order reactions where Rate = k.",
+        "d": "Increasing reactant concentration increases collision frequency, speeding up the reaction."
+      }
+    }
+  ],
+  "check": [
+    {
+      "id": "c1-check-1",
+      "kind": "kinetics",
+      "prompt": "For a second-order reaction Rate = 0.25 [A]^2, set the concentration [A] so the reaction progresses at 1.00 M/s.",
+      "conceptIds": ["chemistry.rate-laws"],
+      "hint": "1.00 = 0.25 [A]^2 => [A]^2 = 1.00 / 0.25 = 4.00. Taking the square root gives [A] = 2.00 M.",
+      "explanation": "At [A] = 2.00 M, Rate = 0.25 x (2.00)^2 = 0.25 x 4.00 = 1.00 M/s.",
+      "reactant": "A",
+      "order": 2,
+      "k": 0.25,
+      "minConcM": 0.2,
+      "maxConcM": 3.0,
+      "stepConcM": 0.1,
+      "targetRateMPerS": 1.0,
+      "answer": 2.0,
+      "tolerance": 0.08
+    },
+    {
+      "id": "c1-check-2",
+      "kind": "choice",
+      "prompt": "For a second-order reaction Rate = k[A]^2, if the concentration of A is doubled, by what factor does the reaction rate increase?",
+      "conceptIds": ["chemistry.rate-laws"],
+      "hint": "Substitute 2[A] into the rate law: (2)^2 = 4.",
+      "explanation": "Because the exponent is 2, doubling concentration multiplies the rate by 2^2 = 4 times.",
+      "options": [
+        { "id": "a", "label": "2 times (doubles)" },
+        { "id": "b", "label": "4 times (quadruples)" },
+        { "id": "c", "label": "8 times" },
+        { "id": "d", "label": "No change" }
+      ],
+      "answer": "b",
+      "misconceptionMap": {
+        "a": "Doubling only occurs when the reaction order is 1.",
+        "c": "An 8-fold increase (2^3) would correspond to a third-order reaction.",
+        "d": "Zero-order reactions have no rate change when concentration varies."
+      }
+    }
+  ],
+  "takeaway": {
+    "title": "Rate laws define how collision frequency scales with concentration",
+    "body": "The rate law Rate = k[A]^m captures the sensitivity of a reaction to reactant concentration. For m = 0, rate is constant; for m = 1, rate scales linearly; for m = 2, rate scales with the square of concentration."
+  },
+  "practice": {
+    "generatorId": "chemistry.rate-law",
+    "count": 12,
+    "config": {}
+  },
+  "metadata": {
+    "domain": "chemistry",
+    "courseId": "chemistry",
+    "levelId": "chemistry-level-1",
+    "order": 0,
+    "provenance": "authored",
+    "confidence": "high"
+  }
+}

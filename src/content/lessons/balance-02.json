@@ -1,0 +1,113 @@
+{
+  "id": "balance-02",
+  "version": "1.0.0",
+  "title": "Undo in reverse",
+  "subtitle": "Two moves, one solution",
+  "conceptIds": ["balance.equivalence", "balance.operations"],
+  "learn": [
+    {
+      "id": "b2-choice",
+      "kind": "choice",
+      "prompt": "The equation is 2x + 3 = 11. Which move should come first?",
+      "conceptIds": ["balance.operations"],
+      "hint": "Undo the operation furthest from x first.",
+      "explanation": "Subtract 3 from both sides to get 2x = 8. Then divide both sides by 2.",
+      "options": [
+        { "id": "a", "label": "Divide both sides by 2" },
+        { "id": "b", "label": "Subtract 3 from both sides" },
+        { "id": "c", "label": "Add 3 to both sides" },
+        { "id": "d", "label": "Multiply both sides by 2" }
+      ],
+      "answer": "b",
+      "misconceptionMap": {
+        "a": "Dividing first gives x + 3/2 = 11/2. It is valid but leaves fractions; undo the constant first.",
+        "c": "Adding 3 moves the constant the wrong way.",
+        "d": "Multiplying makes the coefficients larger."
+      }
+    },
+    {
+      "id": "b2-balance-1",
+      "kind": "balance",
+      "prompt": "Solve 2x + 3 = 11 by keeping the scale balanced.",
+      "conceptIds": ["balance.operations"],
+      "hint": "Subtract 3 from both sides, then divide both sides by 2.",
+      "explanation": "2x + 3 − 3 = 11 − 3 gives 2x = 8. Dividing both sides by 2 gives x = 4.",
+      "left": { "a": 2, "b": 3 },
+      "right": { "a": 0, "b": 11 },
+      "variable": "x",
+      "operations": [
+        { "id": "sub3", "label": "Subtract 3 from both sides", "op": "subtract", "value": 3 },
+        { "id": "add3", "label": "Add 3 to both sides", "op": "add", "value": 3 },
+        { "id": "div2", "label": "Divide both sides by 2", "op": "divide", "value": 2 },
+        { "id": "mul2", "label": "Multiply both sides by 2", "op": "multiply", "value": 2 }
+      ],
+      "answer": "x = 4"
+    },
+    {
+      "id": "b2-balance-2",
+      "kind": "balance",
+      "prompt": "Solve 4x − 2 = 10 by keeping the scale balanced.",
+      "conceptIds": ["balance.operations"],
+      "hint": "The constant is negative. Add 2 to both sides first.",
+      "explanation": "Adding 2 to both sides gives 4x = 12. Dividing both sides by 4 gives x = 3.",
+      "left": { "a": 4, "b": -2 },
+      "right": { "a": 0, "b": 10 },
+      "variable": "x",
+      "operations": [
+        { "id": "add2", "label": "Add 2 to both sides", "op": "add", "value": 2 },
+        { "id": "sub2", "label": "Subtract 2 from both sides", "op": "subtract", "value": 2 },
+        { "id": "div4", "label": "Divide both sides by 4", "op": "divide", "value": 4 },
+        { "id": "mul4", "label": "Multiply both sides by 4", "op": "multiply", "value": 4 }
+      ],
+      "answer": "x = 3"
+    }
+  ],
+  "check": [
+    {
+      "id": "b2-check-1",
+      "kind": "balance",
+      "prompt": "Solve 3x + 4 = 19 by keeping the scale balanced.",
+      "conceptIds": ["balance.operations"],
+      "hint": "Subtract 4, then divide by 3.",
+      "explanation": "3x = 15 after subtracting 4, so x = 5.",
+      "left": { "a": 3, "b": 4 },
+      "right": { "a": 0, "b": 19 },
+      "variable": "x",
+      "operations": [
+        { "id": "sub4", "label": "Subtract 4 from both sides", "op": "subtract", "value": 4 },
+        { "id": "add4", "label": "Add 4 to both sides", "op": "add", "value": 4 },
+        { "id": "div3", "label": "Divide both sides by 3", "op": "divide", "value": 3 },
+        { "id": "mul3", "label": "Multiply both sides by 3", "op": "multiply", "value": 3 }
+      ],
+      "answer": "x = 5"
+    },
+    {
+      "id": "b2-check-2",
+      "kind": "math",
+      "prompt": "Solve 5x − 7 = 18. Enter the value of x.",
+      "conceptIds": ["balance.operations"],
+      "hint": "Add 7 to both sides, then divide both sides by 5.",
+      "explanation": "5x = 25 after adding 7, so x = 5.",
+      "answer": "5",
+      "variables": [],
+      "tolerance": 0.001
+    }
+  ],
+  "takeaway": {
+    "title": "Reverse the order of operations",
+    "body": "Undo addition and subtraction first, then multiplication and division. Apply every move to both sides, and check the result in the original equation."
+  },
+  "practice": {
+    "generatorId": "balance.linear-two-step",
+    "count": 12,
+    "config": {}
+  },
+  "metadata": {
+    "domain": "balance",
+    "courseId": "balance",
+    "levelId": "balance-level-1",
+    "order": 1,
+    "provenance": "authored",
+    "confidence": "high"
+  }
+}

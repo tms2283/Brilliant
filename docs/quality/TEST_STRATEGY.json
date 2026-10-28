@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "system": "Noesis",
+  "version": "0.1.0",
+  "timestamp": "2026-10-21T10:32:00Z",
+  "profile": {
+    "codebase_intrinsic": {
+      "primary_language": "TypeScript 5.x / React 19",
+      "secondary_language": "Node.js (ESM)",
+      "loc": 12500,
+      "architecture_style": "Modular Monolith (Clean Architecture)",
+      "dependency_graph_depth": 4,
+      "cyclomatic_complexity_max": 9,
+      "cognitive_complexity_avg": 3.2
+    },
+    "platform_and_runtime": {
+      "runtimes": ["Node.js >= 20.0.0", "Modern Chromium / Firefox / WebKit"],
+      "bundler": "Vite 8.x / Rolldown",
+      "css_architecture": "Vanilla CSS Design System with CSS Tokens",
+      "math_rendering": "KaTeX 0.19.x (WASM/Fonts/MathML)"
+    },
+    "deployment_and_infrastructure": {
+      "target": "Local-First Desktop Web App / Offline PWA",
+      "database": "SQLite 3 via better-sqlite3 (WAL mode, persistent disk + in-memory test)",
+      "http_engine": "Hono v4 on Node.js HTTP",
+      "observability": "Local structured event logging, health check probe (/api/health)"
+    },
+    "data_characteristics": {
+      "volume": "< 50 MB local database",
+      "sensitivity": "Single-learner local attempts (No PII / No external cloud sync)",
+      "statefulness": "Append-only attempts log + derived projection caching",
+      "migration_state": "Embedded idempotent DDL schema"
+    },
+    "user_and_traffic_profile": {
+      "concurrency": "1 active concurrent user (single-operator local desktop)",
+      "peak_load": "Immediate burst interactions (simulation slider ticks, fast submits)",
+      "accessibility_level": "WCAG 2.2 AA (Full keyboard reachability, skip links, >= 4.5:1 contrast)",
+      "i18n_readiness": "Unicode math symbols, LaTeX standard encoding"
+    },
+    "compliance_and_regulatory": {
+      "gdpr_ccpa": "Exempt (Local zero-telemetry, zero-cloud architecture)",
+      "data_retention": "User-controlled local SQLite file (`data/noesis.db`)",
+      "content_provenance": "100% original / generated STEM items; zero external proprietary assets"
+    },
+    "risk_domain_and_criticality": {
+      "criticality": "Educational Content Integrity & Physical Simulation Precision",
+      "pedagogical_safety": "Tutor anti-leak verification, deterministic evaluator gating"
+    }
+  },
+  "execution_matrix": {
+    "static_analysis": {
+      "typecheck": "tsc --noEmit (0 errors)",
+      "build_bundle": "vite build (0 errors, 362ms)",
+      "supply_chain": "npm audit (0 vulnerabilities)"
+    },
+    "functional_execution": {
+      "test_framework": "Vitest 4.x",
+      "test_suites": 17,
+      "total_tests": 91,
+      "passing_tests": 91,
+      "assertion_count": 240
+    },
+    "performance_benchmarks": {
+      "api_avg_latency_ms": 0.91,
+      "api_p50_latency_ms": 1.01,
+      "api_p95_latency_ms": 1.41,
+      "api_p99_latency_ms": 2.94,
+      "client_dom_ready_ms": 434,
+      "first_meaningful_paint_ms": 500
+    },
+    "accessibility_metrics": {
+      "total_controls": 26,
+      "reachable_controls": 26,
+      "skip_link_present": true,
+      "contrast_aa_violations": 0
+    }
+  }
+}

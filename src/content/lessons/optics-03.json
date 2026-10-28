@@ -1,0 +1,131 @@
+{
+  "id": "optics-03",
+  "version": "1.0.0",
+  "title": "Total internal reflection and optical fibers",
+  "subtitle": "Trapping light when rays cannot escape",
+  "conceptIds": ["optics.refraction"],
+  "learn": [
+    {
+      "id": "o3-refraction",
+      "kind": "optics",
+      "prompt": "Light inside acrylic (n1 = 1.49) reaches water (n2 = 1.33) at an angle of 35°. Adjust the refracted beam according to Snell's law.",
+      "conceptIds": ["optics.refraction"],
+      "hint": "n1 sin(θ1) = n2 sin(θ2) => 1.49 x sin(35°) = 1.33 x sin(θ2) => sin(θ2) = 1.49 x 0.5736 / 1.33 = 0.6425 => θ2 ≈ 40.0°.",
+      "explanation": "Because light enters a less dense medium (lower index), it speeds up and bends away from the normal line, exiting at 40.0°.",
+      "n1": 1.49,
+      "n2": 1.33,
+      "medium1": "Acrylic",
+      "medium2": "Water",
+      "incidentAngleDeg": 35,
+      "minRefractedDeg": 20,
+      "maxRefractedDeg": 70,
+      "stepDeg": 0.5,
+      "answer": 40.0,
+      "tolerance": 1.0
+    },
+    {
+      "id": "o3-choice-tir",
+      "kind": "choice",
+      "prompt": "What happens when light travelling inside glass (n = 1.50) hits an air boundary at an angle greater than the critical angle (41.8°)?",
+      "conceptIds": ["optics.refraction"],
+      "hint": "Beyond the critical angle, Snell's law yields sin(θ2) > 1, which has no real solution for refraction.",
+      "explanation": "No light can escape into the air. 100% of the light reflects back into the glass. This is total internal reflection (TIR).",
+      "options": [
+        { "id": "a", "label": "All light is reflected internally with zero escaping into the air" },
+        { "id": "b", "label": "The light is completely absorbed by the surface" },
+        { "id": "c", "label": "The light refracts along the surface line at 90°" },
+        { "id": "d", "label": "The frequency of the light doubles" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "TIR is pure reflection, not absorption; total internal reflection produces virtually no loss.",
+        "c": "At exactly the critical angle light skims the surface at 90°; beyond the critical angle it reflects entirely.",
+        "d": "Reflection never changes the frequency of light."
+      }
+    },
+    {
+      "id": "o3-slider",
+      "kind": "slider",
+      "prompt": "A step-index optical fiber has a core (n1 = 1.50) and cladding (n2 = 1.20). The critical angle is arcsin(1.20 / 1.50) = arcsin(0.8) ≈ 53.1°. Set the slider to the critical angle in degrees.",
+      "conceptIds": ["optics.refraction"],
+      "hint": "Calculate arcsin(n2 / n1): arcsin(0.8) = 53.13°.",
+      "explanation": "sin(θc) = n2 / n1 = 1.20 / 1.50 = 0.800. θc = 53.1°.",
+      "min": 30,
+      "max": 80,
+      "step": 0.1,
+      "unit": "°",
+      "answer": 53.1,
+      "tolerance": 0.2
+    },
+    {
+      "id": "o3-math",
+      "kind": "math",
+      "prompt": "A dense flint glass with n = 2.0 meets air (n = 1.0). Since sin(θc) = 1.0 / 2.0 = 0.5, enter the critical angle in degrees.",
+      "conceptIds": ["optics.refraction"],
+      "hint": "arcsin(0.5) is a standard angle.",
+      "explanation": "sin(30°) = 0.5, so the critical angle is exactly 30°.",
+      "answer": "30",
+      "variables": [],
+      "tolerance": 0.001
+    }
+  ],
+  "check": [
+    {
+      "id": "o3-check-1",
+      "kind": "choice",
+      "prompt": "Can total internal reflection occur when light travels from air into glass?",
+      "conceptIds": ["optics.refraction"],
+      "hint": "Remember which medium must have the higher refractive index for rays to bend away from normal.",
+      "explanation": "No. Light only bends away from the normal when passing from a higher index (slower) medium to a lower index (faster) medium.",
+      "options": [
+        { "id": "a", "label": "No — TIR requires light to start in the higher-index medium" },
+        { "id": "b", "label": "Yes — if the incident angle is above 45°" },
+        { "id": "c", "label": "Yes — but only for polarized laser light" },
+        { "id": "d", "label": "Yes — at any grazing incidence angle" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "Entering a denser medium always bends rays toward the normal, never past 90°.",
+        "c": "Polarization does not overcome Snell's boundary condition.",
+        "d": "Grazing incidence into a denser medium refracts at the critical angle inside, but never reflects internally."
+      }
+    },
+    {
+      "id": "o3-check-2",
+      "kind": "choice",
+      "prompt": "Why are telecommunication signals carried across oceans via glass fiber optics rather than copper cables?",
+      "conceptIds": ["optics.refraction"],
+      "hint": "Consider the reflection efficiency and attenuation of total internal reflection.",
+      "explanation": "Total internal reflection traps light pulses inside the fiber core with negligible loss over vast distances, supporting immense bandwidth.",
+      "options": [
+        { "id": "a", "label": "Total internal reflection keeps optical signals trapped inside the fiber with minimal attenuation" },
+        { "id": "b", "label": "Glass conducts electrical charges faster than copper" },
+        { "id": "c", "label": "Light waves are immune to the speed of light limit" },
+        { "id": "d", "label": "Fiber optic cables generate their own laser power along the path" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "Glass is an electrical insulator, not a conductor; it guides light waves.",
+        "c": "Light travels at c/n in glass, which is approximately 200,000 km/s.",
+        "d": "Optical fibers do not generate power; they passively guide light."
+      }
+    }
+  ],
+  "takeaway": {
+    "title": "Trapping light with total internal reflection",
+    "body": "When light passes from a higher-index to a lower-index medium, rays bend away from the normal. Past the critical angle sin(θc) = n2 / n1, 100% of the light reflects internally, enabling fiber optics and laser wave guides."
+  },
+  "practice": {
+    "generatorId": "optics.refraction",
+    "count": 12,
+    "config": {}
+  },
+  "metadata": {
+    "domain": "optics",
+    "courseId": "optics",
+    "levelId": "optics-level-1",
+    "order": 2,
+    "provenance": "authored",
+    "confidence": "high"
+  }
+}

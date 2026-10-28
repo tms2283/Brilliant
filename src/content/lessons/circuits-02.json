@@ -1,0 +1,107 @@
+{
+  "id": "circuits-02",
+  "version": "1.0.0",
+  "title": "Ohm's law",
+  "subtitle": "One relationship, three questions",
+  "conceptIds": ["circuits.ohms-law"],
+  "learn": [
+    {
+      "id": "c2-slider",
+      "kind": "slider",
+      "prompt": "A 12 V source is across a 4 Ω resistor. Set the current.",
+      "conceptIds": ["circuits.ohms-law"],
+      "hint": "Use I = V / R. Divide the voltage by the resistance.",
+      "explanation": "I = 12 V / 4 Ω = 3 A.",
+      "min": 0,
+      "max": 8,
+      "step": 0.5,
+      "unit": "A",
+      "answer": 3,
+      "tolerance": 0.01
+    },
+    {
+      "id": "c2-choice",
+      "kind": "choice",
+      "prompt": "The resistance is fixed. You double the voltage. What happens to the current?",
+      "conceptIds": ["circuits.ohms-law"],
+      "hint": "Current is proportional to voltage when resistance is constant.",
+      "explanation": "I = V / R. Doubling V while R stays fixed doubles I.",
+      "options": [
+        { "id": "a", "label": "It doubles" },
+        { "id": "b", "label": "It halves" },
+        { "id": "c", "label": "It stays the same" },
+        { "id": "d", "label": "It quadruples" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "Current and voltage move together when resistance is fixed, not in opposite directions.",
+        "c": "The resistance is fixed, but the voltage changed, so the current must change.",
+        "d": "Doubling voltage doubles current. It does not square the current."
+      }
+    },
+    {
+      "id": "c2-math",
+      "kind": "math",
+      "prompt": "A 9 V source drives 0.5 A through a resistor. Enter the resistance in ohms.",
+      "conceptIds": ["circuits.ohms-law"],
+      "hint": "Rearrange I = V / R to R = V / I.",
+      "explanation": "R = 9 V / 0.5 A = 18 Ω.",
+      "answer": "18",
+      "variables": [],
+      "tolerance": 0.001
+    }
+  ],
+  "check": [
+    {
+      "id": "c2-check-1",
+      "kind": "choice",
+      "prompt": "A 24 V source is across an 8 Ω resistor. What current flows?",
+      "conceptIds": ["circuits.ohms-law"],
+      "hint": "Divide voltage by resistance.",
+      "explanation": "I = 24 V / 8 Ω = 3 A.",
+      "options": [
+        { "id": "a", "label": "0.33 A" },
+        { "id": "b", "label": "3 A" },
+        { "id": "c", "label": "8 A" },
+        { "id": "d", "label": "192 A" }
+      ],
+      "answer": "b",
+      "misconceptionMap": {
+        "a": "You divided resistance by voltage. Use I = V / R.",
+        "c": "That is the resistance, not the current.",
+        "d": "You multiplied voltage by resistance. Ohm's law divides them."
+      }
+    },
+    {
+      "id": "c2-check-2",
+      "kind": "slider",
+      "prompt": "A 2 A current flows through 6 Ω. Set the voltage across the resistor.",
+      "conceptIds": ["circuits.ohms-law"],
+      "hint": "Rearrange I = V / R to V = I R.",
+      "explanation": "V = 2 A × 6 Ω = 12 V.",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "unit": "V",
+      "answer": 12,
+      "tolerance": 0.01
+    }
+  ],
+  "takeaway": {
+    "title": "One equation, three rearrangements",
+    "body": "V = I R connects the three quantities. Fix any two and the third is determined: I = V / R, V = I R, R = V / I."
+  },
+  "practice": {
+    "generatorId": "circuits.ohms-law",
+    "count": 12,
+    "config": {}
+  },
+  "metadata": {
+    "domain": "circuits",
+    "courseId": "circuits",
+    "levelId": "circuits-level-1",
+    "order": 1,
+    "provenance": "authored",
+    "confidence": "high"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "id": "optics-02",
+  "version": "1.0.0",
+  "title": "Thin lenses and image formation",
+  "subtitle": "Focusing light rays to construct real and virtual images",
+  "conceptIds": ["optics.thin-lens"],
+  "learn": [
+    {
+      "id": "o2-slider-1",
+      "kind": "slider",
+      "prompt": "A converging lens has a focal length of 10 cm. An illuminated object sits 30 cm in front of the lens. Adjust the sensor position (image distance di) to capture a focused real image.",
+      "conceptIds": ["optics.thin-lens"],
+      "hint": "Use 1/di = 1/f - 1/do = 1/10 - 1/30 = (3 - 1) / 30 = 2 / 30 = 1/15.",
+      "explanation": "Solving 1/di = 1/10 - 1/30 gives di = 15 cm. Light rays converging past the lens meet in focus at 15 cm on the opposite side.",
+      "min": 5,
+      "max": 35,
+      "step": 1,
+      "unit": "cm",
+      "answer": 15,
+      "tolerance": 0.5
+    },
+    {
+      "id": "o2-choice-1",
+      "kind": "choice",
+      "prompt": "An object is placed exactly at distance do = 2f from a converging lens. Where does the focused image form?",
+      "conceptIds": ["optics.thin-lens"],
+      "hint": "Substitute do = 2f into 1/f = 1/do + 1/di.",
+      "explanation": "1/di = 1/f - 1/(2f) = 1/(2f), so di = 2f. The image forms at 2f with an exact 1:1 magnification.",
+      "options": [
+        { "id": "a", "label": "At distance di = 2f (same size, inverted)" },
+        { "id": "b", "label": "At the focal point di = f" },
+        { "id": "c", "label": "At infinity" },
+        { "id": "d", "label": "At distance di = 4f" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "An image only forms at f when the incoming light arrives from infinity (parallel rays).",
+        "c": "An image forms at infinity when the object sits directly at the focal point (do = f).",
+        "d": "The thin lens equation yields di = 2f, not 4f."
+      }
+    }
+  ],
+  "check": [
+    {
+      "id": "o2-check-1",
+      "kind": "slider",
+      "prompt": "A camera lens has a focal length of 12 cm. An object stands at do = 24 cm. Where must the film or sensor be placed behind the lens?",
+      "conceptIds": ["optics.thin-lens"],
+      "hint": "1/di = 1/12 - 1/24 = 1/24.",
+      "explanation": "Because do = 2f (24 = 2 x 12), the image forms at exactly di = 24 cm.",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "cm",
+      "answer": 24,
+      "tolerance": 0.5
+    },
+    {
+      "id": "o2-check-2",
+      "kind": "choice",
+      "prompt": "When an object is placed inside the focal length (do < f) of a magnifying lens, what kind of image is produced?",
+      "conceptIds": ["optics.thin-lens"],
+      "hint": "The rays diverge after exiting the lens, appearing to originate from behind the object.",
+      "explanation": "When do < f, 1/di is negative, meaning the image is virtual, upright, and magnified (like looking through a magnifying glass).",
+      "options": [
+        { "id": "a", "label": "A virtual, upright, magnified image" },
+        { "id": "b", "label": "A real, inverted, diminished image" },
+        { "id": "c", "label": "No rays exit the lens" },
+        { "id": "d", "label": "A real, upright image on the other side" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "A real inverted image only forms when the object is outside the focal point (do > f).",
+        "c": "Rays refract through the lens, but they diverge rather than converge.",
+        "d": "A real image produced by a single lens is always inverted."
+      }
+    }
+  ],
+  "takeaway": {
+    "title": "The thin lens equation connects focal length and image position",
+    "body": "The relationship 1/f = 1/do + 1/di determines where rays converge. For objects beyond the focal point (do > f), a real inverted image forms. For objects closer than the focal point (do < f), diverging rays appear to form a virtual, upright image."
+  },
+  "practice": {
+    "generatorId": "optics.thin-lens",
+    "count": 12,
+    "config": {}
+  },
+  "metadata": {
+    "domain": "optics",
+    "courseId": "optics",
+    "levelId": "optics-level-1",
+    "order": 1,
+    "provenance": "authored",
+    "confidence": "high"
+  }
+}

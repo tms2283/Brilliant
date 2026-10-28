@@ -1,0 +1,114 @@
+{
+  "id": "balance-01",
+  "version": "1.0.0",
+  "title": "Keep it equal",
+  "subtitle": "One move at a time",
+  "conceptIds": ["balance.equivalence", "balance.operations"],
+  "learn": [
+    {
+      "id": "b1-choice",
+      "kind": "choice",
+      "prompt": "The equation is x + 7 = 12. Which move isolates x without breaking equality?",
+      "conceptIds": ["balance.operations"],
+      "hint": "Undo the +7 by doing the inverse operation to the whole equation.",
+      "explanation": "Subtract 7 from both sides: x + 7 − 7 = 12 − 7, so x = 5.",
+      "options": [
+        { "id": "a", "label": "Subtract 7 from both sides" },
+        { "id": "b", "label": "Subtract 7 from the left side only" },
+        { "id": "c", "label": "Add 7 to both sides" },
+        { "id": "d", "label": "Divide both sides by 7" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "Changing only one side breaks the equality. Every move applies to both sides.",
+        "c": "Adding 7 makes the constant larger, moving away from isolating x.",
+        "d": "Dividing by 7 does not undo an added 7."
+      }
+    },
+    {
+      "id": "b1-balance-add",
+      "kind": "balance",
+      "prompt": "Solve x + 5 = 12 by keeping the scale balanced.",
+      "conceptIds": ["balance.operations"],
+      "hint": "Subtract 5 from both sides.",
+      "explanation": "Subtracting 5 from both sides gives x = 7.",
+      "left": { "a": 1, "b": 5 },
+      "right": { "a": 0, "b": 12 },
+      "variable": "x",
+      "operations": [
+        { "id": "sub5", "label": "Subtract 5 from both sides", "op": "subtract", "value": 5 },
+        { "id": "add5", "label": "Add 5 to both sides", "op": "add", "value": 5 }
+      ],
+      "answer": "x = 7"
+    },
+    {
+      "id": "b1-balance-mul",
+      "kind": "balance",
+      "prompt": "Solve 3x = 15 by keeping the scale balanced.",
+      "conceptIds": ["balance.operations"],
+      "hint": "Divide both sides by 3.",
+      "explanation": "Dividing both sides by 3 gives x = 5.",
+      "left": { "a": 3, "b": 0 },
+      "right": { "a": 0, "b": 15 },
+      "variable": "x",
+      "operations": [
+        { "id": "div3", "label": "Divide both sides by 3", "op": "divide", "value": 3 },
+        { "id": "mul3", "label": "Multiply both sides by 3", "op": "multiply", "value": 3 }
+      ],
+      "answer": "x = 5"
+    }
+  ],
+  "check": [
+    {
+      "id": "b1-check-1",
+      "kind": "balance",
+      "prompt": "Solve x + 9 = 14 by keeping the scale balanced.",
+      "conceptIds": ["balance.operations"],
+      "hint": "Undo the +9 on both sides.",
+      "explanation": "Subtract 9 from both sides: x = 5.",
+      "left": { "a": 1, "b": 9 },
+      "right": { "a": 0, "b": 14 },
+      "variable": "x",
+      "operations": [
+        { "id": "sub9", "label": "Subtract 9 from both sides", "op": "subtract", "value": 9 },
+        { "id": "add9", "label": "Add 9 to both sides", "op": "add", "value": 9 }
+      ],
+      "answer": "x = 5"
+    },
+    {
+      "id": "b1-check-2",
+      "kind": "choice",
+      "prompt": "You add 4 to the left side of an equation and nothing else. What happens?",
+      "conceptIds": ["balance.equivalence"],
+      "hint": "An equation is a statement that both sides have the same value.",
+      "explanation": "The two sides no longer have the same value, so the equality is broken.",
+      "options": [
+        { "id": "a", "label": "The equation stays equivalent" },
+        { "id": "b", "label": "The equality is broken" },
+        { "id": "c", "label": "The solution is unchanged" }
+      ],
+      "answer": "b",
+      "misconceptionMap": {
+        "a": "Equality survives only when the same operation is applied to both sides.",
+        "c": "Changing one side changes the value, so the solution changes."
+      }
+    }
+  ],
+  "takeaway": {
+    "title": "Equality is a promise",
+    "body": "Whatever you do to one side, do to the other. Undo operations in reverse order until the variable stands alone."
+  },
+  "practice": {
+    "generatorId": "balance.linear-one-step",
+    "count": 12,
+    "config": {}
+  },
+  "metadata": {
+    "domain": "balance",
+    "courseId": "balance",
+    "levelId": "balance-level-1",
+    "order": 0,
+    "provenance": "authored",
+    "confidence": "high"
+  }
+}

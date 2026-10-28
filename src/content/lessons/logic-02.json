@@ -1,0 +1,132 @@
+{
+  "id": "logic-02",
+  "version": "1.0.0",
+  "title": "Exclusive OR and De Morgan's laws",
+  "subtitle": "Difference detection and equivalent gate transforms",
+  "conceptIds": ["logic.composite-gates", "logic.boolean-operators"],
+  "learn": [
+    {
+      "id": "l2-choice-xor",
+      "kind": "choice",
+      "prompt": "An XOR (Exclusive OR) gate outputs TRUE when its inputs differ. If Input A = 1 and Input B = 1, what does the XOR gate output?",
+      "conceptIds": ["logic.composite-gates"],
+      "hint": "Exclusive OR means 'one or the other, but NOT both'.",
+      "explanation": "Because both inputs are 1, they are identical, so XOR outputs 0 (FALSE).",
+      "options": [
+        { "id": "false", "label": "FALSE (0)" },
+        { "id": "true", "label": "TRUE (1)" },
+        { "id": "two", "label": "2" },
+        { "id": "floating", "label": "FLOATING" }
+      ],
+      "answer": "false",
+      "misconceptionMap": {
+        "true": "A regular OR outputs 1 for (1, 1), but an Exclusive OR requires the inputs to be strictly different.",
+        "two": "Logic outputs are binary: strictly 0 or 1.",
+        "floating": "XOR produces a clean logic 0."
+      }
+    },
+    {
+      "id": "l2-toggle-xor",
+      "kind": "toggle",
+      "prompt": "Configure inputs A and B so that an XOR gate outputs TRUE (1).",
+      "conceptIds": ["logic.composite-gates"],
+      "hint": "The inputs must be different from one another. Turn on either Input A or Input B, but not both.",
+      "explanation": "Setting Input A ON and Input B OFF produces an output of 1 from the XOR gate.",
+      "components": [
+        { "id": "inA", "label": "Input A", "onByDefault": false },
+        { "id": "inB", "label": "Input B", "onByDefault": false }
+      ],
+      "answer": ["inA"]
+    },
+    {
+      "id": "l2-choice-demorgan",
+      "kind": "choice",
+      "prompt": "According to De Morgan's Law, what is the logical equivalent of NOT(A AND B)?",
+      "conceptIds": ["logic.composite-gates"],
+      "hint": "Break the line, change the sign: negate each variable and swap AND for OR.",
+      "explanation": "NOT(A AND B) ≡ (NOT A) OR (NOT B). If it is not the case that both hold, then at least one must be false.",
+      "options": [
+        { "id": "a", "label": "(NOT A) OR (NOT B)" },
+        { "id": "b", "label": "(NOT A) AND (NOT B)" },
+        { "id": "c", "label": "A OR B" },
+        { "id": "d", "label": "NOT(A OR B)" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "(NOT A) AND (NOT B) is equivalent to NOT(A OR B), not NOT(A AND B).",
+        "c": "Inverting an AND does not yield a simple OR without inverting the operands.",
+        "d": "NOT(A OR B) is a NOR gate."
+      }
+    },
+    {
+      "id": "l2-math",
+      "kind": "math",
+      "prompt": "Evaluate the XOR sum (addition modulo 2): 1 ⊕ 0 ⊕ 1. Enter the single binary digit result (0 or 1).",
+      "conceptIds": ["logic.composite-gates"],
+      "hint": "1 XOR 0 = 1. Then 1 XOR 1 = 0.",
+      "explanation": "(1 ⊕ 0) = 1. Then (1 ⊕ 1) = 0. The parity of an even number of 1s is 0.",
+      "answer": "0",
+      "variables": [],
+      "tolerance": 0.001
+    }
+  ],
+  "check": [
+    {
+      "id": "l2-check-1",
+      "kind": "choice",
+      "prompt": "Why is the NAND gate known as a 'universal gate' in computer engineering?",
+      "conceptIds": ["logic.composite-gates"],
+      "hint": "Consider what other logic functions can be built purely out of NAND gates.",
+      "explanation": "Any Boolean function (NOT, AND, OR, XOR) can be constructed exclusively using arrangements of NAND gates. Modern flash memory and CPUs are built largely from NAND structures.",
+      "options": [
+        { "id": "a", "label": "Any possible logic function or computer can be built entirely using only NAND gates" },
+        { "id": "b", "label": "NAND gates use zero electrical power" },
+        { "id": "c", "label": "NAND gates operate faster than the speed of light" },
+        { "id": "d", "label": "NAND gates can take an infinite number of inputs" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "All physical semiconductor gates consume switching power.",
+        "c": "Semiconductor propagation delays are limited by capacitance and light speed in silicon.",
+        "d": "Physical gates have a maximum fan-in limit."
+      }
+    },
+    {
+      "id": "l2-check-2",
+      "kind": "choice",
+      "prompt": "A two-way hallway light switch allows you to flip either switch to toggle the light state. Which logic operation governs this behavior?",
+      "conceptIds": ["logic.composite-gates"],
+      "hint": "Flipping either switch inverts the output.",
+      "explanation": "An XOR gate inverts its output whenever either input toggles state, exactly matching two-way light switching circuits.",
+      "options": [
+        { "id": "xor", "label": "XOR (Exclusive OR)" },
+        { "id": "and", "label": "AND gate" },
+        { "id": "nor", "label": "NOR gate" },
+        { "id": "not", "label": "NOT gate" }
+      ],
+      "answer": "xor",
+      "misconceptionMap": {
+        "and": "An AND gate would turn off if either switch is turned off.",
+        "nor": "A NOR gate is only on when both switches are off.",
+        "not": "A NOT gate only accepts a single input."
+      }
+    }
+  ],
+  "takeaway": {
+    "title": "Universality and parity",
+    "body": "XOR acts as a difference detector and bit-adder (half adder). De Morgan's laws show that negation swaps conjunction and disjunction, proving that NAND and NOR are universal building blocks."
+  },
+  "practice": {
+    "generatorId": "logic.gates",
+    "count": 12,
+    "config": {}
+  },
+  "metadata": {
+    "domain": "logic",
+    "courseId": "logic",
+    "levelId": "logic-level-1",
+    "order": 1,
+    "provenance": "authored",
+    "confidence": "high"
+  }
+}

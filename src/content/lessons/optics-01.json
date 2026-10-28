@@ -1,0 +1,104 @@
+{
+  "id": "optics-01",
+  "version": "1.0.0",
+  "title": "Bending light: Snell's law",
+  "subtitle": "Wave speed changes at optical boundaries",
+  "conceptIds": ["optics.refraction"],
+  "learn": [
+    {
+      "id": "o1-refraction",
+      "kind": "optics",
+      "prompt": "Light traveling in air strikes glass (n = 1.50) at an incident angle of 45°. Adjust the beam until the refracted angle matches Snell's law.",
+      "conceptIds": ["optics.refraction"],
+      "hint": "Snell's law: n1 sin(θ1) = n2 sin(θ2). Here 1.00 x sin(45°) = 1.50 x sin(θ2), so sin(θ2) = 0.707 / 1.50 = 0.471. Taking arcsin gives 28.1°.",
+      "explanation": "Because glass is optically denser than air (higher index), light slows down and bends toward the normal line, resulting in an angle of 28.1°.",
+      "n1": 1.0,
+      "n2": 1.5,
+      "medium1": "Air",
+      "medium2": "Glass",
+      "incidentAngleDeg": 45,
+      "minRefractedDeg": 10,
+      "maxRefractedDeg": 60,
+      "stepDeg": 0.5,
+      "answer": 28.1,
+      "tolerance": 1.0
+    },
+    {
+      "id": "o1-choice-1",
+      "kind": "choice",
+      "prompt": "When a light wave passes from air into a denser medium like water, why does the ray bend toward the normal?",
+      "conceptIds": ["optics.refraction"],
+      "hint": "Think about what happens to the wave fronts as they enter the new medium.",
+      "explanation": "Light travels slower in water than in air. As the wavefront enters at an angle, the side entering first slows down first, pivoting the beam toward the normal.",
+      "options": [
+        { "id": "a", "label": "The wave slows down in the denser medium" },
+        { "id": "b", "label": "The wave speeds up in the denser medium" },
+        { "id": "c", "label": "The frequency of the light increases" },
+        { "id": "d", "label": "The medium absorbs the perpendicular components" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "Light travels slower in denser media: v = c / n.",
+        "c": "Frequency is determined by the source and does not change across a boundary.",
+        "d": "Refraction is a speed change effect, not selective absorption."
+      }
+    }
+  ],
+  "check": [
+    {
+      "id": "o1-check-1",
+      "kind": "optics",
+      "prompt": "Light strikes water (n = 1.33) from air (n = 1.00) at an angle of 30°. Set the refracted ray angle to satisfy Snell's law.",
+      "conceptIds": ["optics.refraction"],
+      "hint": "sin(θ2) = (1.00 / 1.33) x sin(30°) = 0.500 / 1.33 = 0.376. arcsin(0.376) = 22.1°.",
+      "explanation": "1.00 x sin(30°) = 1.33 x sin(θ2) gives θ2 = 22.1°.",
+      "n1": 1.0,
+      "n2": 1.33,
+      "medium1": "Air",
+      "medium2": "Water",
+      "incidentAngleDeg": 30,
+      "minRefractedDeg": 10,
+      "maxRefractedDeg": 50,
+      "stepDeg": 0.5,
+      "answer": 22.1,
+      "tolerance": 1.0
+    },
+    {
+      "id": "o1-check-2",
+      "kind": "choice",
+      "prompt": "Light moving through glass reaches the boundary with air. If it successfully transmits into the air, which direction does it bend?",
+      "conceptIds": ["optics.refraction"],
+      "hint": "Light speeds up when leaving glass for air.",
+      "explanation": "Because n_air < n_glass, the light speeds up, bending away from the normal (larger angle).",
+      "options": [
+        { "id": "a", "label": "Toward the normal line (smaller angle)" },
+        { "id": "b", "label": "Away from the normal line (larger angle)" },
+        { "id": "c", "label": "It does not bend at all" },
+        { "id": "d", "label": "It rotates 90 degrees" }
+      ],
+      "answer": "b",
+      "misconceptionMap": {
+        "a": "Bending toward the normal occurs when entering a slower medium, not a faster one.",
+        "c": "Refraction always occurs at non-zero incidence when refractive indices differ.",
+        "d": "Refraction angles obey Snell's law, not fixed 90-degree rotations."
+      }
+    }
+  ],
+  "takeaway": {
+    "title": "Snell's law governs refraction",
+    "body": "When light crosses into a medium with a different optical density, its wave speed changes according to n = c / v. The ray bends toward the normal when slowing down (n2 > n1) and away from the normal when speeding up (n2 < n1)."
+  },
+  "practice": {
+    "generatorId": "optics.refraction",
+    "count": 12,
+    "config": {}
+  },
+  "metadata": {
+    "domain": "optics",
+    "courseId": "optics",
+    "levelId": "optics-level-1",
+    "order": 0,
+    "provenance": "authored",
+    "confidence": "high"
+  }
+}

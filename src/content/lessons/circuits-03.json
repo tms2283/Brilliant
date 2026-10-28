@@ -1,0 +1,104 @@
+{
+  "id": "circuits-03",
+  "version": "1.0.0",
+  "title": "Power",
+  "subtitle": "Energy per second",
+  "conceptIds": ["circuits.power", "circuits.ohms-law"],
+  "learn": [
+    {
+      "id": "c3-choice",
+      "kind": "choice",
+      "prompt": "A 12 V source supplies 2 A. How much power is delivered?",
+      "conceptIds": ["circuits.power"],
+      "hint": "Power is voltage times current.",
+      "explanation": "P = V I = 12 V × 2 A = 24 W.",
+      "options": [
+        { "id": "a", "label": "6 W" },
+        { "id": "b", "label": "24 W" },
+        { "id": "c", "label": "48 W" },
+        { "id": "d", "label": "144 W" }
+      ],
+      "answer": "b",
+      "misconceptionMap": {
+        "a": "You divided voltage by current. Power multiplies them.",
+        "c": "You doubled the product. P = V I, not 2 V I.",
+        "d": "That is V², not V I."
+      }
+    },
+    {
+      "id": "c3-slider",
+      "kind": "slider",
+      "prompt": "A 6 V source drives 0.5 A. Set the power.",
+      "conceptIds": ["circuits.power"],
+      "hint": "Use P = V I.",
+      "explanation": "P = 6 V × 0.5 A = 3 W.",
+      "min": 0,
+      "max": 12,
+      "step": 0.5,
+      "unit": "W",
+      "answer": 3,
+      "tolerance": 0.01
+    },
+    {
+      "id": "c3-math",
+      "kind": "math",
+      "prompt": "A 3 A current flows through a 4 Ω resistor. Enter the power dissipated in watts.",
+      "conceptIds": ["circuits.power", "circuits.ohms-law"],
+      "hint": "You do not know the voltage directly. Use P = I² R.",
+      "explanation": "P = I² R = 3² × 4 = 36 W.",
+      "answer": "36",
+      "variables": [],
+      "tolerance": 0.001
+    }
+  ],
+  "check": [
+    {
+      "id": "c3-check-1",
+      "kind": "choice",
+      "prompt": "A 9 V source drives 0.5 A. What power is delivered?",
+      "conceptIds": ["circuits.power"],
+      "hint": "Multiply voltage by current.",
+      "explanation": "P = 9 V × 0.5 A = 4.5 W.",
+      "options": [
+        { "id": "a", "label": "2.25 W" },
+        { "id": "b", "label": "4.5 W" },
+        { "id": "c", "label": "9.5 W" },
+        { "id": "d", "label": "18 W" }
+      ],
+      "answer": "b",
+      "misconceptionMap": {
+        "a": "You squared the current. P = V I.",
+        "c": "You added the numbers instead of multiplying them.",
+        "d": "You divided by 0.5 instead of multiplying by it."
+      }
+    },
+    {
+      "id": "c3-check-2",
+      "kind": "math",
+      "prompt": "A 12 V source is across a 4 Ω resistor. Enter the power in watts.",
+      "conceptIds": ["circuits.power", "circuits.ohms-law"],
+      "hint": "Find the current first, or use P = V² / R.",
+      "explanation": "P = V² / R = 144 / 4 = 36 W.",
+      "answer": "36",
+      "variables": [],
+      "tolerance": 0.001
+    }
+  ],
+  "takeaway": {
+    "title": "Power is the rate of energy transfer",
+    "body": "P = V I. With Ohm's law this becomes P = I² R = V² / R. Choose the form that uses the quantities you already know."
+  },
+  "practice": {
+    "generatorId": "circuits.power",
+    "count": 12,
+    "config": {}
+  },
+  "metadata": {
+    "domain": "circuits",
+    "courseId": "circuits",
+    "levelId": "circuits-level-1",
+    "order": 2,
+    "provenance": "authored",
+    "confidence": "high"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "id": "chemistry-02",
+  "version": "1.0.0",
+  "title": "First-order kinetics and half-life",
+  "subtitle": "Constant exponential decay independent of starting concentration",
+  "conceptIds": ["chemistry.half-life"],
+  "learn": [
+    {
+      "id": "c2-choice-1",
+      "kind": "choice",
+      "prompt": "A therapeutic compound breaks down via first-order kinetics with a half-life of 4 hours. If a patient takes a 100 mg dose, how much remains active after 8 hours?",
+      "conceptIds": ["chemistry.half-life"],
+      "hint": "Calculate the number of half-lives: 8 hours / 4 hours = 2 half-lives. Each half-life cuts the amount in half.",
+      "explanation": "After 4 hours (1 half-life), 50 mg remains. After 8 hours (2 half-lives), 25 mg remains: 100 x (1/2)^2 = 25 mg.",
+      "options": [
+        { "id": "a", "label": "25 mg" },
+        { "id": "b", "label": "50 mg" },
+        { "id": "c", "label": "12.5 mg" },
+        { "id": "d", "label": "0 mg" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "50 mg remains after only 4 hours (1 half-life).",
+        "c": "12.5 mg would require 3 half-lives (12 hours).",
+        "d": "Exponential decay approaches zero asymptotically; it does not reach zero in 2 half-lives."
+      }
+    },
+    {
+      "id": "c2-slider-1",
+      "kind": "slider",
+      "prompt": "A reactant sample has a half-life of 20 minutes. Starting with 80 mg, at what elapsed time will exactly 20 mg remain?",
+      "conceptIds": ["chemistry.half-life"],
+      "hint": "80 mg -> 40 mg (1st half-life) -> 20 mg (2nd half-life). Two half-lives of 20 min each.",
+      "explanation": "The quantity halves twice to drop from 80 mg to 20 mg. Two half-lives equal 2 x 20 min = 40 min.",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "min",
+      "answer": 40,
+      "tolerance": 1.0
+    }
+  ],
+  "check": [
+    {
+      "id": "c2-check-1",
+      "kind": "choice",
+      "prompt": "What distinctive characteristic defines a first-order chemical reaction compared to zero- or second-order reactions?",
+      "conceptIds": ["chemistry.half-life"],
+      "hint": "Look at the formula t_1/2 = ln(2) / k. Does [A] appear anywhere in it?",
+      "explanation": "Because t_1/2 = ln(2) / k, the half-life of a first-order reaction is completely constant and independent of the initial reactant concentration.",
+      "options": [
+        { "id": "a", "label": "Its half-life is constant and independent of starting concentration" },
+        { "id": "b", "label": "Its reaction rate is completely constant over time" },
+        { "id": "c", "label": "Its half-life doubles as the reactant is consumed" },
+        { "id": "d", "label": "It requires a catalyst to proceed" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "Constant reaction rate defines a zero-order reaction (Rate = k).",
+        "c": "Half-life increasing as concentration drops is characteristic of second-order reactions (t_1/2 = 1/(k[A]0)).",
+        "d": "Catalysts alter activation energy, but any reaction order can be catalyzed or uncatalyzed."
+      }
+    },
+    {
+      "id": "c2-check-2",
+      "kind": "choice",
+      "prompt": "A chemical reactant with a half-life of 15 minutes begins with a mass of 64 mg. How much remains after 45 minutes?",
+      "conceptIds": ["chemistry.half-life"],
+      "hint": "45 min / 15 min = 3 half-lives: 64 -> 32 -> 16 -> 8.",
+      "explanation": "45 minutes represents 3 half-lives. Halving 64 mg three times gives 64 -> 32 -> 16 -> 8 mg.",
+      "options": [
+        { "id": "a", "label": "8 mg" },
+        { "id": "b", "label": "16 mg" },
+        { "id": "c", "label": "21.3 mg" },
+        { "id": "d", "label": "4 mg" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "16 mg is after 2 half-lives (30 min).",
+        "c": "That subtracts 64/3 linearly instead of halving exponentially.",
+        "d": "4 mg would be after 4 half-lives (60 min)."
+      }
+    }
+  ],
+  "takeaway": {
+    "title": "First-order half-life is an invariant of the reaction",
+    "body": "Because t_1/2 = ln(2) / k, every first-order process takes the exact same amount of time to halve its remaining material, whether starting at 1000 moles or 1 mole. This invariant is the foundation of radiocarbon dating and pharmacokinetics."
+  },
+  "practice": {
+    "generatorId": "chemistry.half-life",
+    "count": 12,
+    "config": {}
+  },
+  "metadata": {
+    "domain": "chemistry",
+    "courseId": "chemistry",
+    "levelId": "chemistry-level-1",
+    "order": 1,
+    "provenance": "authored",
+    "confidence": "high"
+  }
+}

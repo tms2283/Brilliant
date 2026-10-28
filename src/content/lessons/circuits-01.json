@@ -1,0 +1,114 @@
+{
+  "id": "circuits-01",
+  "version": "1.0.0",
+  "title": "Series and parallel circuits",
+  "subtitle": "Two paths, one battery",
+  "conceptIds": ["circuits.series", "circuits.parallel", "circuits.ohms-law"],
+  "learn": [
+    {
+      "id": "c1-toggle",
+      "kind": "toggle",
+      "prompt": "The lamp is in series with both switches. Which switches must be closed for current to reach the lamp?",
+      "conceptIds": ["circuits.series"],
+      "hint": "In a series circuit there is only one path. Every switch on that path must be closed.",
+      "explanation": "A series circuit has one path, so opening either switch breaks the path for the whole circuit.",
+      "components": [
+        { "id": "s1", "label": "Switch 1", "onByDefault": false },
+        { "id": "s2", "label": "Switch 2", "onByDefault": false },
+        { "id": "s3", "label": "Switch 3 (parallel branch)", "onByDefault": false }
+      ],
+      "answer": ["s1", "s2"]
+    },
+    {
+      "id": "c1-choice",
+      "kind": "choice",
+      "prompt": "Two 6 Ω resistors are in series across a 12 V battery. What is the current?",
+      "conceptIds": ["circuits.series", "circuits.ohms-law"],
+      "hint": "Add the resistances first, then use I = V / R.",
+      "explanation": "R_total = 6 + 6 = 12 Ω, so I = 12 V / 12 Ω = 1 A.",
+      "options": [
+        { "id": "a", "label": "0.5 A" },
+        { "id": "b", "label": "1 A" },
+        { "id": "c", "label": "2 A" },
+        { "id": "d", "label": "4 A" }
+      ],
+      "answer": "b",
+      "misconceptionMap": {
+        "a": "You divided by the sum of both resistors twice. Add the resistances once, then divide the voltage by that total.",
+        "c": "You used only one resistor. In series, both resistances add.",
+        "d": "You divided the voltage by 3 Ω. The total series resistance is 12 Ω."
+      }
+    },
+    {
+      "id": "c1-slider",
+      "kind": "slider",
+      "prompt": "A 6 V battery must drive 0.5 A through one resistor. Set the resistance.",
+      "conceptIds": ["circuits.ohms-law"],
+      "hint": "Rearrange I = V / R to R = V / I.",
+      "explanation": "R = 6 V / 0.5 A = 12 Ω.",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "unit": "Ω",
+      "answer": 12,
+      "tolerance": 0.01
+    }
+  ],
+  "check": [
+    {
+      "id": "c1-check-1",
+      "kind": "choice",
+      "prompt": "Two 6 Ω resistors are in parallel across a 12 V battery. What is the total current drawn from the battery?",
+      "conceptIds": ["circuits.parallel", "circuits.ohms-law"],
+      "hint": "Each branch sees the full 12 V. Find each branch current, then add them.",
+      "explanation": "Each branch draws 12 V / 6 Ω = 2 A, so the battery supplies 4 A total.",
+      "options": [
+        { "id": "a", "label": "1 A" },
+        { "id": "b", "label": "2 A" },
+        { "id": "c", "label": "4 A" },
+        { "id": "d", "label": "6 A" }
+      ],
+      "answer": "c",
+      "misconceptionMap": {
+        "a": "That would be the current if the total resistance were 12 Ω. In parallel, the equivalent resistance is smaller than either branch.",
+        "b": "That is the current in one branch. The battery supplies both branches.",
+        "d": "Check the branch current: 12 V / 6 Ω = 2 A per branch, not 3 A."
+      }
+    },
+    {
+      "id": "c1-check-2",
+      "kind": "choice",
+      "prompt": "You add a second identical branch in parallel. What happens to the total current from the battery?",
+      "conceptIds": ["circuits.parallel"],
+      "hint": "The new branch provides another path for charge to flow.",
+      "explanation": "Adding a parallel branch lowers the equivalent resistance, so the total current increases.",
+      "options": [
+        { "id": "a", "label": "It increases" },
+        { "id": "b", "label": "It decreases" },
+        { "id": "c", "label": "It stays the same" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "Adding a path does not increase resistance. It lowers the equivalent resistance.",
+        "c": "The voltage stays the same, but the equivalent resistance changes, so the total current changes."
+      }
+    }
+  ],
+  "takeaway": {
+    "title": "Series adds resistance; parallel adds paths",
+    "body": "In series, resistances add and the current is the same everywhere. In parallel, each branch sees the full voltage and the branch currents add."
+  },
+  "practice": {
+    "generatorId": "circuits.series-parallel",
+    "count": 12,
+    "config": {}
+  },
+  "metadata": {
+    "domain": "circuits",
+    "courseId": "circuits",
+    "levelId": "circuits-level-1",
+    "order": 0,
+    "provenance": "authored",
+    "confidence": "high"
+  }
+}

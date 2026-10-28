@@ -1,0 +1,48 @@
+# app-config.toml — Noesis (/user harness)
+
+name = "Noesis"
+slug = "noesis"
+url = "http://localhost:5173"
+description = "Offline-first interactive STEM learning application modeled on Brilliant/Duolingo mechanics"
+
+[intent]
+purpose = "Help learners master STEM concepts through hands-on interactive simulations, deterministic evaluators, and adaptive mastery progression"
+primary_user = "A curious learner or student studying physics, chemistry, and mathematics from first principles"
+must_do_well = "Provide responsive, hands-on manipulatives with immediate physical consequences, verified feedback, and accurate mastery tracking"
+hello_world_task = "Select a course, complete an interactive lesson manipulation, submit answer checks, and verify progress updates"
+
+[main_task]
+description = "Click on a course to open its adaptive path or start an introductory lesson"
+expected_outcome = "The learner enters an interactive lesson workbench with a live simulation and prompt"
+verification_text = "Noesis"
+start_control = "Open Circuits path →"
+avoid_labels = []
+
+[returning_task]
+description = "Return to workbench and inspect persistent progress, streaks, and concept mastery cards"
+expected_outcome = "Completed attempts and streak days are preserved across sessions"
+
+[test_data]
+text = "Sample topic hypothesis"
+url = "http://localhost:5173"
+email = "learner@example.local"
+filename = "noesis-attempts.json"
+
+[features_present]
+has_login = false
+has_search = false
+has_settings = true
+has_upload = false
+has_export = true
+has_keyboard_shortcuts = false
+
+[constraints]
+viewports = ["desktop"]
+browsers = ["chromium"]
+
+[notes]
+context = """
+The app runs on http://localhost:5173 with API backend on http://localhost:8787.
+Navigation includes Courses (#/), Tracks (#/paths), Progress (#/progress), Custom topic (#/custom), Curator (#/curator), Archive (#/archive), and Settings (#/settings).
+All manipulatives support keyboard nudge via left/right arrow controls.
+"""

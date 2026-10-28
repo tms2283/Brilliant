@@ -1,0 +1,48 @@
+# Dependencies and build output
+node_modules/
+dist/
+build/
+out/
+.next/
+.vite/
+target/
+coverage/
+.turbo/
+.cache/
+
+# Lock files (large, low-signal)
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+bun.lockb
+Cargo.lock
+
+# Runtime data — learner database, model weights, generated media
+data/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.db
+models/
+*.gguf
+*.onnx
+*.riv
+
+# Generated content caches (re-derivable from generators + seeds)
+content/.generated/
+
+# Binary assets
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.mp3
+*.wav
+*.mp4
+*.woff
+*.woff2
+
+# Logs
+*.log
+logs/

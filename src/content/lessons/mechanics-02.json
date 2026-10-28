@@ -1,0 +1,92 @@
+{
+  "id": "mechanics-02",
+  "version": "1.0.0",
+  "title": "Mechanical advantage",
+  "subtitle": "Trade force for distance",
+  "conceptIds": ["mechanics.mechanical-advantage"],
+  "learn": [
+    {
+      "id": "m2-lever",
+      "kind": "lever",
+      "prompt": "An 80 N stone rests 1 m left of the fulcrum. Move the 20 N effort until the lever balances.",
+      "conceptIds": ["mechanics.mechanical-advantage"],
+      "hint": "The lever multiplies your 20 N effort into 80 N when the effort arm is 80 / 20 = 4 times longer.",
+      "explanation": "With an effort arm of 4 m and a load arm of 1 m, the Ideal Mechanical Advantage is 4 / 1 = 4. The 20 N effort balances an 80 N load.",
+      "left": { "forceN": 80, "distanceM": 1, "label": "Stone (80 N)" },
+      "right": { "forceN": 20, "minM": 1, "maxM": 5, "stepM": 0.1, "label": "Effort (20 N)" },
+      "answer": 4,
+      "tolerance": 0.05
+    },
+    {
+      "id": "m2-choice-1",
+      "kind": "choice",
+      "prompt": "A crowbar provides an Ideal Mechanical Advantage (IMA) of 5. How much effort is needed to lift a 250 N crate?",
+      "conceptIds": ["mechanics.mechanical-advantage"],
+      "hint": "Effort force = load force / IMA.",
+      "explanation": "Dividing the 250 N load by the IMA of 5 gives an effort of 50 N.",
+      "options": [
+        { "id": "a", "label": "50 N" },
+        { "id": "b", "label": "250 N" },
+        { "id": "c", "label": "1250 N" },
+        { "id": "d", "label": "100 N" }
+      ],
+      "answer": "a",
+      "misconceptionMap": {
+        "b": "An IMA of 5 multiplies your force, so you need much less than the full 250 N.",
+        "c": "That multiplies the load by 5 instead of dividing it.",
+        "d": "That would only be an IMA of 2.5."
+      }
+    }
+  ],
+  "check": [
+    {
+      "id": "m2-check-1",
+      "kind": "lever",
+      "prompt": "A 60 N load sits 1 m left of the pivot. Where must a 15 N effort be applied to balance it?",
+      "conceptIds": ["mechanics.mechanical-advantage"],
+      "hint": "Match the torques: 60 N x 1 m = 15 N x d.",
+      "explanation": "60 N m / 15 N = 4 m. The machine provides an IMA of 4.",
+      "left": { "forceN": 60, "distanceM": 1, "label": "Load (60 N)" },
+      "right": { "forceN": 15, "minM": 1, "maxM": 5, "stepM": 0.1, "label": "Effort (15 N)" },
+      "answer": 4,
+      "tolerance": 0.05
+    },
+    {
+      "id": "m2-check-2",
+      "kind": "choice",
+      "prompt": "A machine multiplies force by 4 (IMA = 4). To lift a load upward by 0.5 m, how far must you push the effort handle?",
+      "conceptIds": ["mechanics.mechanical-advantage"],
+      "hint": "Work in equals work out: effort distance = load height x IMA.",
+      "explanation": "Because force is multiplied by 4, you must move 4 times farther: 0.5 m x 4 = 2.0 m.",
+      "options": [
+        { "id": "a", "label": "0.125 m" },
+        { "id": "b", "label": "0.5 m" },
+        { "id": "c", "label": "2.0 m" },
+        { "id": "d", "label": "4.0 m" }
+      ],
+      "answer": "c",
+      "misconceptionMap": {
+        "a": "That divides distance by 4; you must push farther to make up for using less force.",
+        "b": "That would mean no trade-off between force and distance.",
+        "d": "That multiplies by 8 instead of the IMA of 4."
+      }
+    }
+  ],
+  "takeaway": {
+    "title": "Machines multiply force, not energy",
+    "body": "Mechanical advantage tells you how many times a machine multiplies your input force. Because work is conserved, any gain in force requires a proportional increase in the distance the effort moves."
+  },
+  "practice": {
+    "generatorId": "mechanics.mechanical-advantage",
+    "count": 12,
+    "config": {}
+  },
+  "metadata": {
+    "domain": "mechanics",
+    "courseId": "mechanics",
+    "levelId": "mechanics-level-1",
+    "order": 1,
+    "provenance": "authored",
+    "confidence": "high"
+  }
+}
